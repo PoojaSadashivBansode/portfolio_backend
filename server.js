@@ -9,7 +9,9 @@ require('dotenv').config({ path: './backend/.env' });
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://fastidious-stroopwafel-81c2fc.netlify.app' 
+}));
 app.use(express.json()); 
 
 const transporter = nodemailer.createTransport({
